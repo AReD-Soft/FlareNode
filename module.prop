@@ -1,0 +1,7 @@
+id=flare_node
+name=Flare Node ☄️
+version=1.0.0
+versionCode=1
+author=AReD Soft
+description=Cloudflared Tunnel daemon with KSU Web UI control.
+webUi=true

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title><span app-name></span> Control</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="app">
+
+<header>
+  <h1><span app-name></span></h1>
+  <span class="subtitle">Cloudflared Tunnel Manager</span>
+</header>
+
+<section class="card">
+  <h2>Device Information</h2>
+  <pre id="device">Press "Fetch Device Info"</pre>
+</section>
+
+<div class="status">
+Tunnel Status : <span id="tunnelStatus" class="unknown">Checking...</span>
+</div>
+
+<section class="card">
+  <h2>Configuration & Control</h2>
+  <label for="tokenInput" style="font-size: 13px; color: #94a3b8;">Cloudflare Token:</label>
+  <input type="text" id="tokenInput" placeholder="Paste your unique token here..." spellcheck="false" style="width: 100%; padding: 12px; margin: 8px 0 16px 0; background: #020617; color: #e5e7eb; border: 1px solid #1e293b; border-radius: 8px; font-family: monospace;">
+
+<div class="actions">
+  <button class="btn warning" onclick="saveToken()">Save Token</button>
+  <button class="btn primary" onclick="startTunnel()">Start</button>
+  <button class="btn danger" onclick="stopTunnel()">Stop</button>
+  <button class="btn" onclick="viewDaemonLog()">View Daemon Log</button>
+</div>
+<br>
+
+<section class="card">
+  <h2>Log</h2>
+  <button class="btn" onclick="clearLog()" style="margin-bottom: 10px;">Clear Log</button>
+  <pre id="log">Ready.</pre>
+</section>
+
+<footer>
+  <span app-name></span> v<span app-version></span> © 2026 - <span app-author></span>
+</footer>
+
+</div>
+
+<script src="app.js"></script>
+
+<div id="confirmModal" class="modal hidden">
+  <div class="modal-box">
+    <h3 id="confirmTitle">Confirm</h3>
+    <pre id="confirmMessage"></pre>
+    <div class="modal-actions">
+      <button class="btn danger" id="confirmNo">Cancel</button>
+      <button class="btn primary" id="confirmYes">Yes</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
